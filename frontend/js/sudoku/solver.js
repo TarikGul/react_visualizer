@@ -3,7 +3,8 @@ import _ from 'lodash'
 class Solver {
     constructor(grid) {
         this.board = grid
-        this.statesArr = [];
+        this.orderedPos = [];
+        this.orderedVal = [];
     }
 
     solver() {
@@ -23,12 +24,15 @@ class Solver {
                 
                 for(let k = 0; k < options.length; k++){
                     this.board[i][j].val = options[k];
-                    // let newBoard = _.cloneDeep(this.board)
-                    // this.statesArr.push(newBoard);
+                    this.orderedPos.push([i, j]);
+                    this.orderedVal.push(options[k]);
+
                     if(this.solver()){
                         return this.board;
                     }
                     this.board[i][j].val = 0;
+                    this.orderedPos.push([i, j]);
+                    this.orderedVal.push(0);
                 }
                 return null;
             }
@@ -52,7 +56,6 @@ class Solver {
     }
 
     getOptions(row, col, board) {
-        
         let options = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
         //rows

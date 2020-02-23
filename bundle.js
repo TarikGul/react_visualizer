@@ -163,6 +163,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var com_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! com/navbar */ "./frontend/components/navbar.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -183,6 +184,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Header =
 /*#__PURE__*/
 function (_React$Component) {
@@ -199,7 +201,7 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "header-container"
-      }, "This is the header");
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(com_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
 
@@ -207,6 +209,156 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./frontend/components/navbar.jsx":
+/*!****************************************!*\
+  !*** ./frontend/components/navbar.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var css_nav_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! css/nav.css */ "./frontend/css/nav.css");
+/* harmony import */ var css_nav_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(css_nav_css__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Navbar =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Navbar, _React$Component);
+
+  function Navbar(props) {
+    _classCallCheck(this, Navbar);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Navbar).call(this, props));
+  }
+
+  _createClass(Navbar, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "navbar-header-title"
+      }, "Algo Vis")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "navbar-items"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "navbar-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Maze Solve")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "navbar-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Sudoku")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "navbar-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Rubik's Cube")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "navbar-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "Main")))));
+    }
+  }]);
+
+  return Navbar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Navbar);
+
+/***/ }),
+
+/***/ "./frontend/components/sudoku/button_numbers.jsx":
+/*!*******************************************************!*\
+  !*** ./frontend/components/sudoku/button_numbers.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var ButtonNumbers =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ButtonNumbers, _Component);
+
+  function ButtonNumbers(props) {
+    var _this;
+
+    _classCallCheck(this, ButtonNumbers);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ButtonNumbers).call(this, props));
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(ButtonNumbers, [{
+    key: "render",
+    value: function render() {
+      var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      var buttons = function buttons() {
+        return numbers.map(function (ele, idx) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: idx,
+            className: "button-number"
+          }, " ", ele, " ");
+        });
+      };
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "button-numbers"
+      }, buttons());
+    }
+  }]);
+
+  return ButtonNumbers;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (ButtonNumbers);
 
 /***/ }),
 
@@ -249,13 +401,22 @@ var Row = function Row(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var js_sudoku_board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js/sudoku/board */ "./frontend/js/sudoku/board.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var com_sudoku_row__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! com/sudoku/row */ "./frontend/components/sudoku/row.jsx");
-/* harmony import */ var css_sudoku_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! css/sudoku.css */ "./frontend/css/sudoku.css");
-/* harmony import */ var css_sudoku_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(css_sudoku_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var com_sudoku_button_numbers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! com/sudoku/button_numbers */ "./frontend/components/sudoku/button_numbers.jsx");
+/* harmony import */ var js_sudoku_board__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! js/sudoku/board */ "./frontend/js/sudoku/board.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var com_sudoku_row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! com/sudoku/row */ "./frontend/components/sudoku/row.jsx");
+/* harmony import */ var css_sudoku_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! css/sudoku.css */ "./frontend/css/sudoku.css");
+/* harmony import */ var css_sudoku_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(css_sudoku_css__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -278,6 +439,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Sudoku =
 /*#__PURE__*/
 function (_React$Component) {
@@ -290,7 +452,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Sudoku).call(this, props));
     _this.state = {
-      board: new js_sudoku_board__WEBPACK_IMPORTED_MODULE_0__["default"]("easy"),
+      board: new js_sudoku_board__WEBPACK_IMPORTED_MODULE_1__["default"]("hard"),
       clicked: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
@@ -303,20 +465,30 @@ function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      var states = this.state.board.states;
+      var orderedPoss = this.state.board.orderedPos;
+      var orderedVals = this.state.board.orderedVal;
       var i = 0;
+      var curBoard = this.state.board.puzzle;
 
       var loopStep = function loopStep() {
-        // Finish the base case for breaking out of the loop
+        if (i === orderedPoss.length) {
+          return;
+        }
+
+        var _orderedPoss$i = _slicedToArray(orderedPoss[i], 2),
+            cur_x = _orderedPoss$i[0],
+            cur_y = _orderedPoss$i[1];
+
+        curBoard[cur_x][cur_y].val = orderedVals[i];
         setTimeout(function () {
           _this2.setState({
-            board: states[i],
+            board: curBoard,
             clicked: true
           });
 
           loopStep();
-          i += 1;
-        }, 100);
+          i++;
+        }, 10);
       };
 
       loopStep();
@@ -325,47 +497,27 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var grid = this.state.clicked ? this.state.board : this.state.board.puzzle;
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
         className: "sudoku"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-        onClick: this.handleClick
-      }, "SOLVE"), grid.map(function (row, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(com_sudoku_row__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+        className: "sudoku-header"
+      }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+        className: "rows-container"
+      }, grid.map(function (row, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(com_sudoku_row__WEBPACK_IMPORTED_MODULE_3__["default"], {
           key: idx,
           row: row
         });
-      }));
+      })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(com_sudoku_button_numbers__WEBPACK_IMPORTED_MODULE_0__["default"], null), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+        onClick: this.handleClick
+      }, "SOLVE"));
     }
   }]);
 
   return Sudoku;
-}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_2___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Sudoku); // visualizeAlgorithm() {
-//     const colors = ['aquamarine', 'red', 'blue', 'blue'];
-//     let i = 0;
-//     console.log('this is orderedtraversal.length', this.orderedTravesal.length);
-//     console.log(this.orderedTravesal);
-//     const loopStep = () => {
-//         // console.log("i at the top of loopstep:", i)
-//         if (i === this.orderedTravesal.length) {
-//             this.visualizeTravelPath();
-//             return;
-//         }
-//         const nextPos = this.orderedTravesal[i].parsePos();
-//         // Finish the base case for breaking out of the loop
-//         setTimeout(() => {
-//             const tile = document.getElementById(nextPos);
-//             tile.style.backgroundColor = colors[0]
-//             tile.style.backgroundColor = colors[0];
-//             colors.rotateRight(1);
-//             this.traversed.push(nextPos);
-//             loopStep();
-//             i += 1;
-//         }, this.timeout);
-//     };
-//     loopStep();
-// }
+/* harmony default export */ __webpack_exports__["default"] = (Sudoku);
 
 /***/ }),
 
@@ -383,12 +535,45 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Tile = function Tile(props) {
+  console.log(props.tile.gridAttribute);
+  var tileClass = "".concat(props.tile.gridAttribute, " + tile");
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "tile"
+    className: tileClass
   }, props.tile.val === 0 ? "" : props.tile.val);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Tile);
+
+/***/ }),
+
+/***/ "./frontend/css/nav.css":
+/*!******************************!*\
+  !*** ./frontend/css/nav.css ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./nav.css */ "./node_modules/css-loader/dist/cjs.js!./frontend/css/nav.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
 
 /***/ }),
 
@@ -492,9 +677,11 @@ function () {
     this.solved = this.solver1.solver();
     this.puzzle = this.generatePuzzle(); //----------------------------------//
     //----------------------------------//
-    // this.puzzleSolved = new Solver(this.puzzle);
-    // this.puzzleSolved.solver();
-    // this.states = this.puzzleSolved.statesArr
+
+    this.puzzleSolved = new _solver__WEBPACK_IMPORTED_MODULE_1__["default"](lodash__WEBPACK_IMPORTED_MODULE_2___default.a.cloneDeep(this.puzzle));
+    this.puzzleSolved.solver();
+    this.orderedPos = this.puzzleSolved.orderedPos;
+    this.orderedVal = this.puzzleSolved.orderedVal;
   }
 
   _createClass(Board, [{
@@ -633,7 +820,8 @@ function () {
     _classCallCheck(this, Solver);
 
     this.board = grid;
-    this.statesArr = [];
+    this.orderedPos = [];
+    this.orderedVal = [];
   }
 
   _createClass(Solver, [{
@@ -655,14 +843,17 @@ function () {
           }
 
           for (var k = 0; k < options.length; k++) {
-            this.board[i][j].val = options[k]; // let newBoard = _.cloneDeep(this.board)
-            // this.statesArr.push(newBoard);
+            this.board[i][j].val = options[k];
+            this.orderedPos.push([i, j]);
+            this.orderedVal.push(options[k]);
 
             if (this.solver()) {
               return this.board;
             }
 
             this.board[i][j].val = 0;
+            this.orderedPos.push([i, j]);
+            this.orderedVal.push(0);
           }
 
           return null;
@@ -739,17 +930,75 @@ function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Tile = function Tile(pos, val) {
-  _classCallCheck(this, Tile);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  this.pos = pos;
-  this.val = val;
-  this.candidates = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-};
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Tile =
+/*#__PURE__*/
+function () {
+  function Tile(pos, val) {
+    _classCallCheck(this, Tile);
+
+    this.pos = pos;
+    this.val = val;
+    this.gridAttribute;
+    this.candidates = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    this.section();
+  }
+
+  _createClass(Tile, [{
+    key: "section",
+    value: function section() {
+      var _this$pos = _slicedToArray(this.pos, 2),
+          row = _this$pos[0],
+          col = _this$pos[1];
+
+      var rowStart = Math.floor(row / 3);
+      var colStart = Math.floor(col / 3);
+      var whites = ["[0,1]", "[1,0]", "[1,2]", "[2,1]"];
+      var gridSection = [rowStart, colStart];
+
+      if (whites.includes(JSON.stringify(gridSection))) {
+        this.gridAttribute = "white";
+      } else {
+        this.gridAttribute = "gray";
+      }
+    }
+  }]);
+
+  return Tile;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (Tile);
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./frontend/css/nav.css":
+/*!********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./frontend/css/nav.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".navbar{\n    display: flex;\n    width: 100%;\n    height: 80px;\n    background-color: #34495e;\n    margin-bottom: 20px;\n}\n\n.navbar-container{\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    margin-left: 1rem;\n    margin-right: 1rem;\n}\n\n.navbar-header-title{\n    color: white;\n    font-size: 1.5rem;\n    margin-left: 30px;\n}\n.navbar-items{\n    display: flex;\n    justify-items: stretch;\n    align-items: center;\n}\n\n.navbar-item{\n    color: white;\n    margin-left: 20px;\n    font-size: 1rem;\n}\n\n.run-button{\n    text-transform: uppercase;\n    background: #dfdfdf;\n    padding: 8px;\n    border-radius: 5px;\n    display: inline-block;\n    border: none;\n}\n\n.run-button:hover{\n    background: white;\n    padding: 8px;\n}\n", ""]);
+// Exports
+module.exports = exports;
+
 
 /***/ }),
 
@@ -764,7 +1013,7 @@ var Tile = function Tile(pos, val) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.sudoku {\n    display: flex;\n    flex-direction: column;\n    min-width: 400px;\n    overflow: hidden;\n}\n\n.row {\n    display: flex;\n    flex-direction: row;\n}\n\n.tile {\n    border: 1px solid black;\n    width: 40px;\n    height: 40px;\n    text-align: center;\n    line-height: 40px;\n}", ""]);
+exports.push([module.i, "\n.sudoku {\n    display: flex;\n    flex-direction: column;\n    min-width: 400px;\n    overflow: hidden;\n}\n\n.row {\n    display: flex;\n    flex-direction: row;\n}\n\n.tile {\n    border: 0.1px solid black;\n    width: 40px;\n    height: 40px;\n    text-align: center;\n    line-height: 40px;\n}\n.white {\n    background-color: white;\n}\n.gray {\n    background-color: rgba(194, 194, 194, 0.26);\n}\n\n.sudoku-header {\n    display: flex;\n    width: 100%;\n    height: 40px;\n    background-color: #34495e;\n    margin-bottom: 20px;\n}\n\n.sudoku{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.rows-container {\n    display: flex;\n    flex-direction: column;\n}\n\n.button-numbers{\n    display: flex;\n    padding: 10px;\n}\n\n.button-number{\n    border: 0.5px solid black;\n    border-radius: 2px;\n    padding: 10px;\n    margin: 2px;\n    cursor: pointer;\n}", ""]);
 // Exports
 module.exports = exports;
 

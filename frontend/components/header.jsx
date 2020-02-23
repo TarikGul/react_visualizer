@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from "com/navbar";
 
 class Header extends React.Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Header extends React.Component {
     render () {
         return (
             <div id="header-container">
-                This is the header
+                <Navbar/>
             </div>
         )
     }
