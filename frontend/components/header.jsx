@@ -1,5 +1,6 @@
-import React from 'react'
 import Navbar from "com/navbar";
+import React from 'react'
+import Timer from './timer'
 
 class Header extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Header extends React.Component {
         return (
             <div id="header-container">
                 <Navbar/>
+                <Timer />
             </div>
         )
     }

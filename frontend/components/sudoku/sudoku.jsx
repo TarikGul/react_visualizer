@@ -8,7 +8,7 @@ class Sudoku extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            board: new Board("hard"),
+            board: new Board("easy"),
             clicked: false
         }
         
@@ -36,7 +36,7 @@ class Sudoku extends React.Component {
                 });
                 loopStep();
                 i++;
-            }, 10)
+            }, 5)
         }
         loopStep();
     }

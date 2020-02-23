@@ -22,7 +22,7 @@ class Board {
 
     generatePuzzle(){
         let levels = {
-            "easy": 36,
+            "easy": 30,
             "medium": 47,
             "hard": 55
         };

@@ -161,9 +161,10 @@ function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var com_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! com/navbar */ "./frontend/components/navbar.jsx");
+/* harmony import */ var com_navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! com/navbar */ "./frontend/components/navbar.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timer */ "./frontend/components/timer.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -185,6 +186,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Header =
 /*#__PURE__*/
 function (_React$Component) {
@@ -199,14 +201,14 @@ function (_React$Component) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         id: "header-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(com_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(com_navbar__WEBPACK_IMPORTED_MODULE_0__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_timer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
   return Header;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
@@ -452,7 +454,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Sudoku).call(this, props));
     _this.state = {
-      board: new js_sudoku_board__WEBPACK_IMPORTED_MODULE_1__["default"]("hard"),
+      board: new js_sudoku_board__WEBPACK_IMPORTED_MODULE_1__["default"]("easy"),
       clicked: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
@@ -488,7 +490,7 @@ function (_React$Component) {
 
           loopStep();
           i++;
-        }, 10);
+        }, 5);
       };
 
       loopStep();
@@ -543,6 +545,121 @@ var Tile = function Tile(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Tile);
+
+/***/ }),
+
+/***/ "./frontend/components/timer.jsx":
+/*!***************************************!*\
+  !*** ./frontend/components/timer.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var pretty_ms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pretty-ms */ "./node_modules/pretty-ms/index.js");
+/* harmony import */ var pretty_ms__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(pretty_ms__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Timer =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Timer, _React$Component);
+
+  function Timer(props) {
+    var _this;
+
+    _classCallCheck(this, Timer);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Timer).call(this, props));
+    _this.state = {
+      time: 0,
+      isOn: false,
+      start: 0,
+      colonNotation: true
+    };
+    _this.startTimer = _this.startTimer.bind(_assertThisInitialized(_this));
+    _this.stopTimer = _this.stopTimer.bind(_assertThisInitialized(_this));
+    _this.resetTimer = _this.resetTimer.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Timer, [{
+    key: "startTimer",
+    value: function startTimer() {
+      var _this2 = this;
+
+      this.setState({
+        time: this.state.time,
+        isOn: true,
+        start: Date.now() - this.state.time
+      });
+      this.timer = setInterval(function () {
+        return _this2.setState({
+          time: Date.now() - _this2.state.start
+        });
+      }, 1000);
+    }
+  }, {
+    key: "stopTimer",
+    value: function stopTimer() {
+      clearInterval(this.timer);
+      this.setState({
+        isOn: false
+      });
+    }
+  }, {
+    key: "resetTimer",
+    value: function resetTimer() {
+      this.setState({
+        time: 0,
+        isOn: false
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var start = this.state.time == 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.startTimer
+      }, "start") : null;
+      var stop = this.state.time == 0 || !this.state.isOn ? null : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.stopTimer
+      }, "stop");
+      var resume = this.state.time == 0 || this.state.isOn ? null : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.startTimer
+      }, "resume");
+      var reset = this.state.time == 0 || this.state.isOn ? null : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.resetTimer
+      }, "reset");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "timer: ", pretty_ms__WEBPACK_IMPORTED_MODULE_1___default()(this.state.time)), start, resume, stop, reset);
+    }
+  }]);
+
+  return Timer;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Timer);
 
 /***/ }),
 
@@ -688,7 +805,7 @@ function () {
     key: "generatePuzzle",
     value: function generatePuzzle() {
       var levels = {
-        "easy": 36,
+        "easy": 30,
         "medium": 47,
         "hard": 55
       };
@@ -18338,6 +18455,190 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	}
 
 	return to;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/parse-ms/index.js":
+/*!****************************************!*\
+  !*** ./node_modules/parse-ms/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+module.exports = milliseconds => {
+	if (typeof milliseconds !== 'number') {
+		throw new TypeError('Expected a number');
+	}
+
+	const roundTowardsZero = milliseconds > 0 ? Math.floor : Math.ceil;
+
+	return {
+		days: roundTowardsZero(milliseconds / 86400000),
+		hours: roundTowardsZero(milliseconds / 3600000) % 24,
+		minutes: roundTowardsZero(milliseconds / 60000) % 60,
+		seconds: roundTowardsZero(milliseconds / 1000) % 60,
+		milliseconds: roundTowardsZero(milliseconds) % 1000,
+		microseconds: roundTowardsZero(milliseconds * 1000) % 1000,
+		nanoseconds: roundTowardsZero(milliseconds * 1e6) % 1000
+	};
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/pretty-ms/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/pretty-ms/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+const parseMilliseconds = __webpack_require__(/*! parse-ms */ "./node_modules/parse-ms/index.js");
+
+const pluralize = (word, count) => count === 1 ? word : `${word}s`;
+
+module.exports = (milliseconds, options = {}) => {
+	if (!Number.isFinite(milliseconds)) {
+		throw new TypeError('Expected a finite number');
+	}
+
+	if (options.colonNotation) {
+		options.compact = false;
+		options.formatSubMilliseconds = false;
+		options.separateMilliseconds = false;
+		options.verbose = false;
+	}
+
+	if (options.compact) {
+		options.secondsDecimalDigits = 0;
+		options.millisecondsDecimalDigits = 0;
+	}
+
+	const result = [];
+
+	const add = (value, long, short, valueString) => {
+		if ((result.length === 0 || !options.colonNotation) && value === 0 && !(options.colonNotation && short === 'm')) {
+			return;
+		}
+
+		valueString = (valueString || value || '0').toString();
+		let prefix;
+		let suffix;
+		if (options.colonNotation) {
+			prefix = result.length > 0 ? ':' : '';
+			suffix = '';
+			const wholeDigits = valueString.includes('.') ? valueString.split('.')[0].length : valueString.length;
+			const minLength = result.length > 0 ? 2 : 1;
+			valueString = '0'.repeat(Math.max(0, minLength - wholeDigits)) + valueString;
+		} else {
+			prefix = '';
+			suffix = options.verbose ? ' ' + pluralize(long, value) : short;
+		}
+
+		result.push(prefix + valueString + suffix);
+	};
+
+	const secondsDecimalDigits =
+		typeof options.secondsDecimalDigits === 'number' ?
+			options.secondsDecimalDigits :
+			1;
+
+	if (secondsDecimalDigits < 1) {
+		const difference = 1000 - (milliseconds % 1000);
+		if (difference < 500) {
+			milliseconds += difference;
+		}
+	}
+
+	// Round up milliseconds for values lager than 1 minute - 50ms since these
+	// always need to be round up. This fixes issues when rounding seconds
+	// independently of minutes later on.
+	if (
+		milliseconds >= (1000 * 60) - 50 &&
+		!options.separateMilliseconds &&
+		!options.formatSubMilliseconds
+	) {
+		const difference = 60 - (milliseconds % 60);
+		if (difference <= 50) {
+			milliseconds += difference;
+		}
+	}
+
+	const parsed = parseMilliseconds(milliseconds);
+
+	add(Math.trunc(parsed.days / 365), 'year', 'y');
+	add(parsed.days % 365, 'day', 'd');
+	add(parsed.hours, 'hour', 'h');
+	add(parsed.minutes, 'minute', 'm');
+
+	if (
+		options.separateMilliseconds ||
+		options.formatSubMilliseconds ||
+		milliseconds < 1000
+	) {
+		add(parsed.seconds, 'second', 's');
+		if (options.formatSubMilliseconds) {
+			add(parsed.milliseconds, 'millisecond', 'ms');
+			add(parsed.microseconds, 'microsecond', 'µs');
+			add(parsed.nanoseconds, 'nanosecond', 'ns');
+		} else {
+			const millisecondsAndBelow =
+				parsed.milliseconds +
+				(parsed.microseconds / 1000) +
+				(parsed.nanoseconds / 1e6);
+
+			const millisecondsDecimalDigits =
+				typeof options.millisecondsDecimalDigits === 'number' ?
+					options.millisecondsDecimalDigits :
+					0;
+
+			const roundedMiliseconds = millisecondsAndBelow >= 1 ?
+				Math.round(millisecondsAndBelow) :
+				Math.ceil(millisecondsAndBelow);
+
+			const millisecondsString = millisecondsDecimalDigits ?
+				millisecondsAndBelow.toFixed(millisecondsDecimalDigits) :
+				roundedMiliseconds;
+
+			add(
+				parseFloat(millisecondsString, 10),
+				'millisecond',
+				'ms',
+				millisecondsString
+			);
+		}
+	} else {
+		const seconds = (milliseconds / 1000) % 60;
+		const secondsDecimalDigits =
+			typeof options.secondsDecimalDigits === 'number' ?
+				options.secondsDecimalDigits :
+				1;
+		const secondsFixed = seconds.toFixed(secondsDecimalDigits);
+		const secondsString = options.keepDecimalsOnWholeSeconds ?
+			secondsFixed :
+			secondsFixed.replace(/\.0+$/, '');
+		add(parseFloat(secondsString, 10), 'second', 's', secondsString);
+	}
+
+	if (result.length === 0) {
+		return '0' + (options.verbose ? ' milliseconds' : 'ms');
+	}
+
+	if (options.compact) {
+		return result[0];
+	}
+
+	if (typeof options.unitCount === 'number') {
+		return result.slice(0, Math.max(options.unitCount, 1)).join(' ');
+	}
+
+	return options.colonNotation ? result.join('') : result.join(' ');
 };
 
 
