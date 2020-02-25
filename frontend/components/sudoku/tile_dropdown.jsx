@@ -35,3 +35,5 @@ class DropDown extends React.Component {
         );
     }
 }
+
+export default DropDown

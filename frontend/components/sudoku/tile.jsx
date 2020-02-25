@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Tile = (props) => {
-    console.log(props.tile.gridAttribute)
     const tileClass = `${props.tile.gridAttribute} + tile`;
     return (
         <div className={tileClass}>

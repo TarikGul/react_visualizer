@@ -364,6 +364,95 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./frontend/components/sudoku/difficulty_dropdown.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/sudoku/difficulty_dropdown.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Difficulty =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Difficulty, _React$Component);
+
+  function Difficulty(props) {
+    var _this;
+
+    _classCallCheck(this, Difficulty);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Difficulty).call(this, props));
+    _this.state = {
+      value: "easy"
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Difficulty, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      e.preventDefault();
+      this.setState({
+        value: e.target.value
+      });
+      console.log("target value:", e.target.value); // let value = e.target.value
+
+      console.log("this is in the dropdown component:", this.state.value);
+      var value = this.state.value;
+      var onChange = this.props.onChange;
+      onChange(value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        value: this.state.value,
+        onChange: this.handleChange,
+        id: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        disabled: true
+      }, "Difficulty"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "easy"
+      }, "Easy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "medium"
+      }, "Medium"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "hard"
+      }, "Hard"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
+    }
+  }]);
+
+  return Difficulty;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Difficulty);
+
+/***/ }),
+
 /***/ "./frontend/components/sudoku/row.jsx":
 /*!********************************************!*\
   !*** ./frontend/components/sudoku/row.jsx ***!
@@ -403,13 +492,14 @@ var Row = function Row(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var com_sudoku_button_numbers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! com/sudoku/button_numbers */ "./frontend/components/sudoku/button_numbers.jsx");
-/* harmony import */ var js_sudoku_board__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! js/sudoku/board */ "./frontend/js/sudoku/board.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var com_sudoku_row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! com/sudoku/row */ "./frontend/components/sudoku/row.jsx");
-/* harmony import */ var css_sudoku_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! css/sudoku.css */ "./frontend/css/sudoku.css");
-/* harmony import */ var css_sudoku_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(css_sudoku_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var js_sudoku_board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js/sudoku/board */ "./frontend/js/sudoku/board.js");
+/* harmony import */ var com_sudoku_button_numbers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! com/sudoku/button_numbers */ "./frontend/components/sudoku/button_numbers.jsx");
+/* harmony import */ var css_sudoku_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! css/sudoku.css */ "./frontend/css/sudoku.css");
+/* harmony import */ var css_sudoku_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(css_sudoku_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _difficulty_dropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./difficulty_dropdown */ "./frontend/components/sudoku/difficulty_dropdown.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var com_sudoku_row__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! com/sudoku/row */ "./frontend/components/sudoku/row.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
@@ -442,6 +532,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Sudoku =
 /*#__PURE__*/
 function (_React$Component) {
@@ -454,14 +545,25 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Sudoku).call(this, props));
     _this.state = {
-      board: new js_sudoku_board__WEBPACK_IMPORTED_MODULE_1__["default"]("easy"),
+      board: new js_sudoku_board__WEBPACK_IMPORTED_MODULE_0__["default"]("easy"),
       clicked: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.onDifficultyChange = _this.onDifficultyChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Sudoku, [{
+    key: "onDifficultyChange",
+    value: function onDifficultyChange(value) {
+      console.log(value);
+      this.setState({
+        board: new js_sudoku_board__WEBPACK_IMPORTED_MODULE_0__["default"](value),
+        clicked: false
+      }); // console.log(this.state.value)
+      // debugger
+    }
+  }, {
     key: "handleClick",
     value: function handleClick(e) {
       var _this2 = this;
@@ -498,26 +600,29 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var grid = this.state.clicked ? this.state.board : this.state.board.puzzle;
-      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      var grid = this.state.clicked ? this.state.board : this.state.board.puzzle; // const grid = this.state.board.puzzle
+
+      return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
         className: "sudoku"
-      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_difficulty_dropdown__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onChange: this.onDifficultyChange
+      }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
         className: "sudoku-header"
-      }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
         className: "rows-container"
       }, grid.map(function (row, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(com_sudoku_row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(com_sudoku_row__WEBPACK_IMPORTED_MODULE_5__["default"], {
           key: idx,
           row: row
         });
-      })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(com_sudoku_button_numbers__WEBPACK_IMPORTED_MODULE_0__["default"], null), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(com_sudoku_button_numbers__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("button", {
         onClick: this.handleClick
       }, "SOLVE"));
     }
   }]);
 
   return Sudoku;
-}(react__WEBPACK_IMPORTED_MODULE_2___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_4___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Sudoku);
 
@@ -537,7 +642,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Tile = function Tile(props) {
-  console.log(props.tile.gridAttribute);
   var tileClass = "".concat(props.tile.gridAttribute, " + tile");
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: tileClass
@@ -1130,7 +1234,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.sudoku {\n    display: flex;\n    flex-direction: column;\n    min-width: 400px;\n    overflow: hidden;\n}\n\n.row {\n    display: flex;\n    flex-direction: row;\n}\n\n.tile {\n    border: 0.1px solid black;\n    width: 40px;\n    height: 40px;\n    text-align: center;\n    line-height: 40px;\n}\n.white {\n    background-color: white;\n}\n.gray {\n    background-color: rgba(194, 194, 194, 0.26);\n}\n\n.sudoku-header {\n    display: flex;\n    width: 100%;\n    height: 40px;\n    background-color: #34495e;\n    margin-bottom: 20px;\n}\n\n.sudoku{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.rows-container {\n    display: flex;\n    flex-direction: column;\n}\n\n.button-numbers{\n    display: flex;\n    padding: 10px;\n}\n\n.button-number{\n    border: 0.5px solid black;\n    border-radius: 2px;\n    padding: 10px;\n    margin: 2px;\n    cursor: pointer;\n}", ""]);
+exports.push([module.i, "\n.sudoku {\n    display: flex;\n    flex-direction: column;\n    min-width: 400px;\n    overflow: hidden;\n}\n\n.row {\n    display: flex;\n    flex-direction: row;\n}\n\n.tile {\n    border: 0.1px solid black;\n    width: 40px;\n    height: 40px;\n    text-align: center;\n    line-height: 40px;\n}\n.white {\n    background-color: white;\n}\n.gray {\n    background-color: rgba(194, 194, 194, 0.26);\n}\n\n.sudoku-header {\n    display: flex;\n    width: 100%;\n    height: 40px;\n    background-color: #34495e;\n    margin-bottom: 20px;\n}\n\n.sudoku{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.rows-container {\n    display: flex;\n    flex-direction: column;\n}\n\n.button-numbers{\n    display: flex;\n    padding: 10px;\n}\n\n.button-number{\n    border: 0.5px solid black;\n    border-radius: 2px;\n    padding: 10px;\n    margin: 2px;\n    cursor: pointer;\n}\n\n.tile {\n    cursor: pointer;\n}", ""]);
 // Exports
 module.exports = exports;
 

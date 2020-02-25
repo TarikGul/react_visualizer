@@ -1,8 +1,9 @@
-import ButtonNumbers from "com/sudoku/button_numbers";
 import Board from "js/sudoku/board";
+import ButtonNumbers from "com/sudoku/button_numbers";
+import css from 'css/sudoku.css';
+import Difficulty from './difficulty_dropdown'
 import React from 'react'
 import Row from "com/sudoku/row";
-import css from 'css/sudoku.css';
 
 class Sudoku extends React.Component {
     constructor(props) {
@@ -13,6 +14,17 @@ class Sudoku extends React.Component {
         }
         
         this.handleClick = this.handleClick.bind(this);
+        this.onDifficultyChange = this.onDifficultyChange.bind(this)
+    }
+
+    onDifficultyChange(value) {
+        console.log(value)
+        this.setState({ 
+            board: new Board(value),
+            clicked: false
+        })
+        // console.log(this.state.value)
+        // debugger
     }
 
     handleClick(e) {
@@ -43,8 +55,11 @@ class Sudoku extends React.Component {
 
     render() {
         const grid = (this.state.clicked) ? this.state.board : this.state.board.puzzle;
+        // const grid = this.state.board.puzzle
+
         return (
             <div className="sudoku">
+                <Difficulty onChange={this.onDifficultyChange}/>
                 <div className="sudoku-header">
                 </div>
                 <div className="rows-container">
