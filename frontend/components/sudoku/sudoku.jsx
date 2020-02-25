@@ -18,13 +18,13 @@ class Sudoku extends React.Component {
     }
 
     onDifficultyChange(value) {
-        console.log(value)
+
+        console.log("this is the value in the onDifficulty before setState",value)
         this.setState({ 
             board: new Board(value),
             clicked: false
         })
-        // console.log(this.state.value)
-        // debugger
+        console.log("this is the value in the onDifficulty after setState", value)
     }
 
     handleClick(e) {
@@ -59,7 +59,7 @@ class Sudoku extends React.Component {
 
         return (
             <div className="sudoku">
-                <Difficulty onChange={this.onDifficultyChange}/>
+                <Difficulty onChange={this.onDifficultyChange} />
                 <div className="sudoku-header">
                 </div>
                 <div className="rows-container">

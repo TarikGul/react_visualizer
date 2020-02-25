@@ -3,34 +3,23 @@ import React from 'react'
 class Difficulty extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            value: "easy"
-        }
-
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(e) {
         e.preventDefault();
-        this.setState({value: e.target.value})
-        console.log("target value:", e.target.value)
-        // let value = e.target.value
-        console.log("this is in the dropdown component:", this.state.value)
-        const { value } = this.state
+
         const { onChange } = this.props
-        
-        onChange(value)
+
+        onChange(e.target.value)
     }
 
     render() {
         return (
             <div>
-                {/* <form onChange={this.handleChange}> */}
-                    <form>
-                    {/* {this.props.onDifficultyChange} */}
+                <form>
                     <label>
-                        <select value={this.state.value} onChange={this.handleChange} id="">
-                        {/* <select value={this.state.value}  id=""> */}
+                        <select onChange={this.handleChange} id="">
                             <option disabled>Difficulty</option>
                             <option value="easy">Easy</option>
                             <option value="medium">Medium</option>
