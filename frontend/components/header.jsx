@@ -11,7 +11,6 @@ class Header extends React.Component {
         return (
             <div id="header-container">
                 <Navbar/>
-                <Timer />
             </div>
         )
     }

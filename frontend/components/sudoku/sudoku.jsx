@@ -4,6 +4,7 @@ import css from 'css/sudoku.css';
 import Difficulty from './difficulty_dropdown'
 import React from 'react'
 import Row from "com/sudoku/row";
+import SudokuHeader from './sudoku_header'
 
 class Sudoku extends React.Component {
     constructor(props) {
@@ -59,9 +60,8 @@ class Sudoku extends React.Component {
 
         return (
             <div className="sudoku">
-                <Difficulty onChange={this.onDifficultyChange} />
-                <div className="sudoku-header">
-                </div>
+                {/* <Difficulty onChange={this.onDifficultyChange} /> */}
+                <SudokuHeader onChange={this.onDifficultyChange}/>
                 <div className="rows-container">
                     {grid.map((row, idx)=>{
                         return <Row key= {idx} row={row} />
