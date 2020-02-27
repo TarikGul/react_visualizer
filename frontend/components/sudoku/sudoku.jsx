@@ -11,21 +11,28 @@ class Sudoku extends React.Component {
         super(props)
         this.state = {
             board: new Board("easy"),
-            clicked: false
+            clicked: false,
+            tilePicked: []
         }
         
+        this.onToggleTile = this.onTileToggle.bind(this)
         this.handleClick = this.handleClick.bind(this);
         this.onDifficultyChange = this.onDifficultyChange.bind(this)
     }
 
-    onDifficultyChange(value) {
+    onTileToggle(value) {
+        console.log("the dolphin has landed")
+        console.log(value)
+        const [p_x, p_y] = value
+        
 
-        console.log("this is the value in the onDifficulty before setState",value)
+    }
+
+    onDifficultyChange(value) {
         this.setState({ 
             board: new Board(value),
             clicked: false
         })
-        console.log("this is the value in the onDifficulty after setState", value)
     }
 
     handleClick(e) {
@@ -64,7 +71,7 @@ class Sudoku extends React.Component {
                 <SudokuHeader onChange={this.onDifficultyChange}/>
                 <div className="rows-container">
                     {grid.map((row, idx)=>{
-                        return <Row key= {idx} row={row} />
+                        return <Row key={idx} row={row} grid={grid} toggle={this.onTileToggle}/>
                     })}
                 </div>
                 <br/>

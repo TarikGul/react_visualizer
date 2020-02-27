@@ -19,7 +19,7 @@ class Difficulty extends React.Component {
             <div>
                 <form>
                     <label>
-                        <select onChange={this.handleChange} id="">
+                        <select onChange={this.handleChange} className="button-diff">
                             <option disabled>Difficulty</option>
                             <option value="easy">Easy</option>
                             <option value="medium">Medium</option>

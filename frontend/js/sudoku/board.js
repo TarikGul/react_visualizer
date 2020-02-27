@@ -99,6 +99,46 @@ class Board {
         }
         return posArr;
     }
+
+    // I still need to parse through the array and make sure that there is no duplicates
+    // Note: im only being lazy because i need to work on my frontend auth
+    togglePositions(pos) {
+        let [p_x, p_y] = pos;
+        let positions = [pos];
+        let blockPositions = this.allBlockPositions(p_x, p_y)
+
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                let stringify = [i, j].toString();
+                if (i === p_x || j === p_y && stringify !== pos.toString()) {
+                    positions.push([i, j])
+                }
+            }
+        }
+        for(let i = 0; i < blockPositions.length; i++) {
+            positions.push(blockPositions[i])
+        }
+        return positions
+    }
+
+    allBlockPositions(row, col) {
+        let positions = [];
+        let p_x = 3 * Math.floor(row / 3);
+        let p_y = 3 * Math.floor(col / 3);
+
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                let r_x = 3 * Math.floor(i / 3);
+                let r_y = 3 * Math.floor(j / 3);
+
+                if ([p_x, p_y].toString() === [r_x, r_y].toString()
+                    && [i, j].toString() !== [row, col].toString()) {
+                    positions.push([i, j])
+                }
+            }
+        }
+        return positions
+    }
 }
 
 export default Board;

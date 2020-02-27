@@ -23,7 +23,7 @@ class SudokuHeader extends React.Component {
         return (
             <div className="sudoku-header">
                 <Difficulty onChange={this.handleChange}/>
-                <Timer />
+                {/* <Timer /> */}
             </div>
         )
     }
