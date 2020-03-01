@@ -12,20 +12,23 @@ class Sudoku extends React.Component {
         this.state = {
             board: new Board("easy"),
             clicked: false,
-            tilePicked: []
+            toggled: false
         }
-        
-        this.onToggleTile = this.onTileToggle.bind(this)
+        this.onTileToggle = this.onTileToggle.bind(this)
         this.handleClick = this.handleClick.bind(this);
         this.onDifficultyChange = this.onDifficultyChange.bind(this)
     }
 
     onTileToggle(value) {
+        // debugger
         console.log("the dolphin has landed")
-        console.log(value)
-        const [p_x, p_y] = value
-        
-
+        console.log(this.state.board)
+        let toggledBoard = this.state.board.changeAttributes(value);
+        console.log("this is the toggle board",toggledBoard)
+        this.setState({
+            board: toggledBoard,
+            toggled: true
+        })
     }
 
     onDifficultyChange(value) {
@@ -62,9 +65,13 @@ class Sudoku extends React.Component {
     }
 
     render() {
-        const grid = (this.state.clicked) ? this.state.board : this.state.board.puzzle;
-        // const grid = this.state.board.puzzle
-
+        const grid = (this.state.clicked) ? this.state.board : ((this.state.toggled) ? this.state.board : this.state.board.puzzle);
+        
+        console.log("---------------------------------------------")
+        console.log("clicked?",this.state.clicked)
+        console.log("this is the state of the board", this.state.board)
+        console.log("this is the state of the puzzle", this.state.board.puzzle)
+        console.log("this is the grid variable:" ,grid)
         return (
             <div className="sudoku">
                 {/* <Difficulty onChange={this.onDifficultyChange} /> */}

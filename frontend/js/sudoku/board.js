@@ -11,6 +11,7 @@ class Board {
         this.solver1 = new Solver(this.grid);
         this.solved = this.solver1.solver()
         this.puzzle = this.generatePuzzle();
+        console.log(this.puzzle)
         //----------------------------------//
 
         //----------------------------------//
@@ -18,6 +19,7 @@ class Board {
         this.puzzleSolved.solver();
         this.orderedPos = this.puzzleSolved.orderedPos;
         this.orderedVal = this.puzzleSolved.orderedVal;
+        this.changeAttributes = this.changeAttributes.bind(this)
     }
 
     generatePuzzle(){
@@ -139,6 +141,34 @@ class Board {
         }
         return positions
     }
+
+    // This function is toggles in sudoku.jsx when a user is trying to get
+    // All the rows, and columns to light up that correspond with the picked
+    // tile.
+    changeAttributes(pos) {
+        let positions = this.togglePositions(pos);
+        let hash = {};
+        positions.forEach((el) => {
+            hash[el] = true
+        })
+
+        console.log(this.puzzle)
+        for(let i = 0; i < this.puzzle.length; i++) {
+            for(let j = 0; j < this.puzzle.length; j++) {
+                let stringify = [i, j]
+                
+                if(hash[stringify]) {
+                    this.puzzle[i][j].gridAttribute = "dolphin"
+                } else {
+                    this.puzzle[i][j].gridAttribute = "white"
+                }
+            }
+        }
+        console.log("this is the puzzle after attributes have been changed", this.puzzle)
+        
+        return this.puzzle
+    }
+    
 }
 
 export default Board;
